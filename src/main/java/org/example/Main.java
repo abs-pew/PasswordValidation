@@ -9,6 +9,23 @@ public class Main {
     public static void main(String[] args) {
 
     }
+
+    public static boolean hasUpperCaseLetter(String pwdStr) {
+        if (pwdStr.equals(pwdStr.toLowerCase())) {
+            return false; // abc = LC(abc) = abc
+        } else {
+            return true; // Abc != (LC(Abc) = abc)
+        }
+    }
+
+    public static boolean hasLowerCaseLetter(String pwdStr) {
+        if (pwdStr.equals(pwdStr.toUpperCase())) {
+            return false; // ABC = UC(ABC)
+        } else {
+            return true; // Abc != (UC(Abc) = ABC)
+        }
+    }
+
     public static boolean hasDigits(String pwdStr) {
         String[] digitsArray = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 

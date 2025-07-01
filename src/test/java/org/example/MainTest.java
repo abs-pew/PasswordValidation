@@ -6,7 +6,65 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
 
-    // Tests for isLengthValid
+
+
+    // Tests for hasUpperCaseLetter
+    //====================================
+
+    @Test
+    void hasUpperCaseLetter_shouldReturnFalse_whenCalledWithPwdWithNoUpperCaseLetter() {
+        //given
+        String pwdStr = "all letters are in lower case";
+        Boolean expected = false;
+        //when
+        Boolean actual = Main.hasUpperCaseLetter(pwdStr);
+        //then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void hasUpperCaseLetter_shouldReturnTrue_whenCalledWithPwdWithUpperCaseLetter() {
+        //given
+        //   String pwdStr = "PassCodeIsThis";
+            String pwdStr = "allsmallbutone2025_T";
+        // String pwdStr = "Allowercase2024";
+        Boolean expected = true;
+        //when
+        Boolean actual = Main.hasUpperCaseLetter(pwdStr);
+        //then
+        assertEquals(expected, actual);
+    }
+
+
+    // Tests for hasLowerCaseLetter
+    //====================================
+
+    @Test
+    void hasLowerCaseLetter_shouldReturnFalse_whenCalledWithPwdWithNoLowerCaseLetter() {
+        //given
+        String pwdStr = "THISISMYPASSWORD";
+        Boolean expected = false;
+        //when
+        Boolean actual = Main.hasLowerCaseLetter(pwdStr);
+        //then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void hasLowerCaseLetter_shouldReturnTrue_whenCalledWithPwdWithLowerCaseLetter() {
+        //given
+    //    String pwdStr = "PassCodeIsThis";
+    //    String pwdStr = "AREST2025e";
+        String pwdStr = "alllowercase2024";
+        Boolean expected = true;
+        //when
+        Boolean actual = Main.hasLowerCaseLetter(pwdStr);
+        //then
+        assertEquals(expected, actual);
+    }
+
+
+    // Tests for hasDigits
     //====================================
 
     @Test

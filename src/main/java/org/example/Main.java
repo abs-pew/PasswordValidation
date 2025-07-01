@@ -8,4 +8,10 @@ public class Main {
 
 
     }
+    public static boolean isLenghtValid(String pwdStr) {
+        if (pwdStr == null || pwdStr.trim().isEmpty() || pwdStr.length() < 8) {
+            return false;
+        } else {
+        return true;}
+    }
 }

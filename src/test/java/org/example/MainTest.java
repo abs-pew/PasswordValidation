@@ -6,6 +6,41 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
 
+    // Tests for isLengthValid
+    //====================================
+
+    @Test
+    void hasDigits_shouldReturnFalse_whenCalledWithPwdWithoutDigits() {
+        //given
+        String pwdStr = "PassCodeIsThis";
+        Boolean expected = false;
+        //when
+        Boolean actual = Main.hasDigits(pwdStr);
+        //then
+        assertEquals(expected, actual);
+    }
+    @Test
+    void hasDigits_shouldReturnTrue_whenCalledWithPwdWithDigits() {
+        //given
+        String pwdStr = "PassCodeIsThis23";
+        Boolean expected = true;
+        //when
+        Boolean actual = Main.hasDigits(pwdStr);
+        //then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void hasDigits_shouldReturnTrue_whenCalledWithPwd_Pass2950Code() {
+        //given
+        String pwdStr = "Pass2950Code";
+        Boolean expected = true;
+        //when
+        Boolean actual = Main.hasDigits(pwdStr);
+        //then
+        assertEquals(expected, actual);
+    }
+
 
     // Tests for isLengthValid
     //====================================
@@ -16,7 +51,7 @@ class MainTest {
         Boolean expected = false;
         //when
 
-        Boolean actual = Main.isLenghtValid(pwdStr);
+        Boolean actual = Main.isLengthValid(pwdStr);
         //then
         assertEquals(expected, actual);
     }
@@ -28,18 +63,18 @@ class MainTest {
         Boolean expected = false;
         //when
 
-        Boolean actual = Main.isLenghtValid(pwdStr);
+        Boolean actual = Main.isLengthValid(pwdStr);
         //then
         assertEquals(expected, actual);
     }
     @Test
     void isLengthValid_shouldReturnTrue_whenCalledWithLength12(){
         //given
-        String pwdStr = "123456789123";
+        String pwdStr = "123456789123This is insane but this is fine";
         Boolean expected = true;
         //when
 
-        Boolean actual = Main.isLenghtValid(pwdStr);
+        Boolean actual = Main.isLengthValid(pwdStr);
         //then
         assertEquals(expected, actual);
     }
@@ -51,7 +86,7 @@ class MainTest {
         Boolean expected = true;
         //when
 
-        Boolean actual = Main.isLenghtValid(pwdStr);
+        Boolean actual = Main.isLengthValid(pwdStr);
         //then
        assertEquals(expected, actual);
     }

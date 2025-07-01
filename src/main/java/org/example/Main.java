@@ -8,6 +8,22 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
+
+    }
+
+
+    public static boolean isWeak(String pwdStr) {
+        String[] weakPasswordsList = {"Password123", "Aa345678", "HelloWorld"};
+
+        boolean result = false;
+
+        for (String weakPass : weakPasswordsList) {
+            if (pwdStr.equalsIgnoreCase(weakPass)) {
+                result = true;
+                break;
+            }
+        }
+        return result;
     }
 
     public static boolean hasUpperCaseLetter(String pwdStr) {

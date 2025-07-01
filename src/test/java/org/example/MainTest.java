@@ -6,6 +6,32 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
 
+    // Tests for isWeak
+    //====================================
+
+    @Test
+    void isWeak_shouldReturnTrue_whenCalledWithPwd_Password123() {
+        //given
+        String pwdStr = "password123";
+       // String pwdStr = "helloworld";
+        Boolean expected = true;
+        //when
+        Boolean actual = Main.isWeak(pwdStr);
+        //then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void isWeak_shouldReturnTrue_whenCalledWithPwd_Aa345678() {
+        //given
+        String pwdStr = "Aa345678";
+        Boolean expected = true;
+        //when
+        Boolean actual = Main.isWeak(pwdStr);
+        //then
+        assertEquals(expected, actual);
+    }
+
 
 
     // Tests for hasUpperCaseLetter

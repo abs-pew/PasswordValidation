@@ -6,6 +6,23 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
 
+
+    // Tests for BONUS - hasSpecialCharacter
+    //====================================
+
+    @Test
+    void hasSpecialCharacter_shouldReturnTrue_whenCalledWithPwdWithSpecialCharacter() {
+        //given
+        //    String pwdStr = "PassCodeIsThis!";
+           String pwdStr = "AREST2025e%";
+        // String pwdStr = "alllowercase2024?";
+        Boolean expected = true;
+        //when
+        Boolean actual = Main.hasSpecialCharacter(pwdStr);
+        //then
+        assertEquals(expected, actual);
+    }
+
     // Tests for isWeak
     //====================================
 

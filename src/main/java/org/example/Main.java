@@ -15,15 +15,28 @@ public class Main {
         String userPwd = scanObj.nextLine();
 
         if (isLengthValid(userPwd) && hasDigits(userPwd) &&
-                hasLowerCaseLetter(userPwd) && hasUpperCaseLetter(userPwd) && !isWeak(userPwd)) {
+                hasLowerCaseLetter(userPwd) && hasUpperCaseLetter(userPwd) && !isWeak(userPwd) && !hasSpecialCharacter(userPwd)) {
             System.out.println("\"" + userPwd + "\"" + " is a valid password.");
         }  else {
             System.out.println("\"" + userPwd + "\"" + " is NOT a valid password.");
             System.out.println("Password must be 8 characters long. \nMust contain  at least one digit." +
-                    "\nMust have at least one lowercase and one uppercase letter.\nMust not be easy to guess.");
+                    "\nMust have at least one lowercase and one uppercase letter.\nMust not be easy to guess.\nNo special characters including space are allowed.");
         }
 
     }
+
+    public static boolean hasSpecialCharacter(String pwdStr) {
+        boolean result = false;
+        for (int i = 0; i < pwdStr.length(); i++) {
+
+            if (!Character.isLetterOrDigit(pwdStr.charAt(i))) {
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
+
 
     public static boolean isWeak(String pwdStr) {
         String[] weakPasswordsList = {"Password123", "Aa345678", "HelloWorld"};

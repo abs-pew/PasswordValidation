@@ -1,6 +1,8 @@
 package org.example;
 
+import javax.swing.*;
 import java.util.Arrays;
+import java.util.Scanner;
 
 // This project is going to validate given password for its length, validity and strength.
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -8,9 +10,20 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
+        Scanner scanObj = new Scanner(System.in);
+        System.out.print("Please set up your password: ");
+        String userPwd = scanObj.nextLine();
+
+        if (isLengthValid(userPwd) && hasDigits(userPwd) &&
+                hasLowerCaseLetter(userPwd) && hasUpperCaseLetter(userPwd) && !isWeak(userPwd)) {
+            System.out.println("\"" + userPwd + "\"" + " is a valid password.");
+        }  else {
+            System.out.println("\"" + userPwd + "\"" + " is NOT a valid password.");
+            System.out.println("Password must be 8 characters long. \nMust contain  at least one digit." +
+                    "\nMust have at least one lowercase and one uppercase letter.\nMust not be easy to guess.");
+        }
 
     }
-
 
     public static boolean isWeak(String pwdStr) {
         String[] weakPasswordsList = {"Password123", "Aa345678", "HelloWorld"};
